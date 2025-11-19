@@ -77,32 +77,32 @@
           
           <input type="text" id="placement-information-input"> </br>
           <input type="email" id="email-address"> </br>
-          <button id="user-age-submit">Submit</button> 
+          <button id="application-submit">Submit</button> 
           <p id="user-age-feedback">Please enter your information above.</p>
-          
+
       </body>
 
       <script>
-        const inputElement = document.getElementById("user-age-feedback");
+        const inputElement = document.getElementById("company-name-input", "applicant-name-input", "applicant-role-input" );
 
-        function isUserOldEnoughToDrink(usersAge, legalDrinkingAge) {
-            if (usersAge >= legalDrinkingAge) {
-                inputElement.innerText = "User is able to buy alchohol";
-                inputElement.style.color = "green";
-                inputElement.style.backgroundColor = "black";
+        function MinimumCharacterInput(CharacterAmount, MinCharacter) {
+            if (CharacterAmount >= MinCharacter) {
+                inputElement.innerText = "";
+                inputElement.style.color = "";
+                inputElement.style.backgroundColor = "";
 
             } else {
-                inputElement.innerText = "User is not able to buy alchohol";
-                inputElement.style.color = "red";
-                inputElement.style.backgroundColor = "black";
+                inputElement.innerText = "Please enter atleast 1 character in each box.";
+                inputElement.style.color = "";
+                inputElement.style.backgroundColor = "";
             }
         }
 
-        const legalDrinkingAge = 18
-        let usersAge = null;
+        const MinCharacter = 1
+        let CharacterAmount = null;
 
         document
-            .getElementById("user-age-submit")
+            .getElementById("application-submit")
             .addEventListener("click", function () {
                 usersAge = document.getElementById("user-age-input").value;
                 isUserOldEnoughToDrink(usersAge, legalDrinkingAge);

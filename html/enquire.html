@@ -114,8 +114,8 @@
         document
             .getElementById("application-submit")
             .addEventListener("click", function () {
-                usersAge = document.getElementById("user-age-input").value;
-                isUserOldEnoughToDrink(usersAge, legalDrinkingAge);
+                CharacterAmount = document.getElementById("company-name-input", "applicant-name-input", "applicant-role-input").value;
+                MinimumCharacterInput(CharacterAmount, MinCharacter);
 
                 const emailAddress = document.getElementById("email-address").value;
 

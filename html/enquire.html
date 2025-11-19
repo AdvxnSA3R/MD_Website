@@ -98,12 +98,12 @@
         function MinimumCharacterInput(CharacterAmount, MinCharacter) {
             if (CharacterAmount >= MinCharacter) {
                 inputElement.innerText = "";
-                inputElement.style.color = "";
+                inputElement.style.color = "green";
                 inputElement.style.backgroundColor = "";
 
             } else {
                 inputElement.innerText = "Please enter atleast 1 character in each box.";
-                inputElement.style.color = "";
+                inputElement.style.color = "red";
                 inputElement.style.backgroundColor = "";
             }
         }

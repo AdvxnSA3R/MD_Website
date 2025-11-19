@@ -59,13 +59,57 @@
     <main>
       
       <body>
-          <input type="text" id="user-age-input">
+          <input type="text" id="company-name-input">
+          <input type="text" id="applicant-name-input">
+          <input type="text" id="applicant-role-input">
+          <input type="email" id="email-address">
+          <input type="text" id="placement-information-input">">
           <button id="user-age-submit">Submit</button>
-          <p id="user-age-feedback">Please enter your age in the input box above!</p>
+          <p id="user-age-feedback">Please enter your information above.</p>
 
 
           <input type="email" id="email-address">
       </body>
+
+      <script>
+        const inputElement = document.getElementById("user-age-feedback");
+
+        function isUserOldEnoughToDrink(usersAge, legalDrinkingAge) {
+            if (usersAge >= legalDrinkingAge) {
+                inputElement.innerText = "User is able to buy alchohol";
+                inputElement.style.color = "green";
+                inputElement.style.backgroundColor = "black";
+
+            } else {
+                inputElement.innerText = "User is not able to buy alchohol";
+                inputElement.style.color = "red";
+                inputElement.style.backgroundColor = "black";
+            }
+        }
+
+        const legalDrinkingAge = 18
+        let usersAge = null;
+
+        document
+            .getElementById("user-age-submit")
+            .addEventListener("click", function () {
+                usersAge = document.getElementById("user-age-input").value;
+                isUserOldEnoughToDrink(usersAge, legalDrinkingAge);
+
+                const emailAddress = document.getElementById("email-address").value;
+
+
+                console.log(emailAddress.includes("@"));
+
+                alert(
+                    emailAddress.includes("@") === true &&
+                    emailAddress.includes(".com") === true ? 
+                        "Email is valid" : 
+                        "Email is not valid"
+                )
+
+            });
+    </script>
      
 
     <footer>

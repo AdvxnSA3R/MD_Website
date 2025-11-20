@@ -1,3 +1,23 @@
-input {
+input, textarea {
     border-radius: 8px;
+    padding-left: 6px;
+    box-sizing: border-box;
+    display: block;
+    transform: scale(1.25);
+    transform-origin: center center;
+    margin: 0 auto 8px auto;
+}
+
+button {
+    border-radius: 8px;
+    background-color: #3dbdb6;
+    color: white;
+    display: block;
+    margin: 12px auto;
+    padding: 8px 16px;
+}
+
+p{
+    display:block;
+    text-align: center;
 }

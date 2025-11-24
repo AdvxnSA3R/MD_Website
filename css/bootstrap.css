@@ -1068,7 +1068,7 @@ color:#992f59;
 text-decoration:none}
 
 a:hover,a:focus{
-color:#3dbdb6;
+color:#ffffff;
 text-decoration:underline}
 
 a:focus{
@@ -2761,9 +2761,10 @@ background-color:#3DBDB6;
 border-color:#371120}
 
 .btn-primary:hover{
-color:#fff;
-background-color:#3DBDB6;
-border-color:#6a213e}
+font-family: 'Poppins', sans-serif;
+color:#000;
+background-color:#66fcf1;
+border-color:#92e4ec}
 
 .btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{
 color:#fff;
@@ -2773,7 +2774,7 @@ border-color:#6a213e}
 
 .btn-primary:active:hover,.btn-primary.active:hover,.open>.dropdown-toggle.btn-primary:hover,.btn-primary:active:focus,.btn-primary.active:focus,.open>.dropdown-toggle.btn-primary:focus,.btn-primary:active.focus,.btn-primary.active.focus,.open>.dropdown-toggle.btn-primary.focus{
 color:#fff;
-background-color:#571b32;
+background-color:#66fcf1;
 border-color:#371120}
 
 .btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled.focus,.btn-primary[disabled].focus,fieldset[disabled] .btn-primary.focus{
@@ -5937,6 +5938,7 @@ font-weight:bold;
 color:#992f59}
 
 section.hero{
+font-family: "Poppins", Helvetica, Arial, sans-serif;
 background-color:#3dbdb6;
 min-height:60vh;
 color:#fff}
@@ -6080,4 +6082,12 @@ text-transform:uppercase;
 font-size:13px;
 letter-spacing:1px}
 
+.black_bg {
+    font-family: 'Poppins';
+    color: #ffffff;
+    background-color: #000000;
+    padding: 12px; /*add this if you want a bit of space around the text*/
+    border-radius: 8px;
+
+}
 

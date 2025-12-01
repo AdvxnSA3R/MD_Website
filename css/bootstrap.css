@@ -5925,17 +5925,18 @@ section:nth-child(odd) .card-body{
 background-color:#efefef}
 
 section:nth-child(even){
-background-color:#efefef}
+background-color:#ffffff}
 
 section:nth-child(even) .card-body{
-background-color:#fff}
+background-color:#efefef}
 
 section>.container{
 text-align:center}
 
 section>.container h2{
 font-weight:bold;
-color:#992f59}
+color:black;
+}
 
 section.hero{
 font-family: "Poppins", Helvetica, Arial, sans-serif;

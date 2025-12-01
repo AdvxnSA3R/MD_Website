@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/hero-image.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     
@@ -70,8 +71,9 @@
         </div>
       </section>
 
-      <!-- Lots of text section  -->
-       <section>
+      <!-- Boxes in 3 columns section -->
+      <section>
+
         <div class="container">
           <div class="container">
             <p>Welcome to the T Connect website, here you can look for current T level placements, learn about T levels,
@@ -79,26 +81,35 @@
                 you can post placement opportunities for future T level cohorts.</p>
           </div>
         </div>
-      </section>
 
-      
-      <!-- Default section  -->
-      <section>
         <div class="container">
-          <h2>Section title</h2>
-          <p>Define what goes in this section</p>
+          <h2>Current placements</h2>
+          <p>You can see open placements underneat and can filter by pathway and course.</p>
           <div class="button-row">
-            <button class="btn btn-primary">Call to action</button>
+            <div class="dropdown">
+              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Manchester</a></li>
+                  <li><a href="#">Bury</a></li>
+                  <li><a href="#">Oldham</a></li>
+                  <li><a href="#">Rochdale</a></li>
+                  <li><a href="#">Trafford</a></li>
+                  <li><a href="#">Altrincham</a></li>
+                  <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">T Level course <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">T level Digital Software Development</a></li>
+                  <li><a href="#">T level Digital Data Analyst</a></li>
+                  <li><a href="#">T level Digital Support and Security</a></li>
+                </ul>
+            </div>
             <button class="btn btn-primary">Call to action</button>
           </div>
-        </div>
-      </section>
+        <br />
 
-      <!-- Boxes in 3 columns section -->
-      <section>
-        <div class="container">
-          <h2>Section title</h2>
-          <p>Optionally add content here</p>
           <div class="card-group card-group-3-col">
 
             <div class="card">
@@ -172,6 +183,44 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <script src="js/bootstrap.js"></script>
+    <script>
+      // Move dropdown menus out to body while open so their visibility isn't restricted by parent overflow or stacking context
+      (function ($) {
+        $(document).on('show.bs.dropdown', '.button-row .dropdown', function () {
+          var $dropdown = $(this);
+          var $menu = $dropdown.find('.dropdown-menu');
+          // store an origin id so we can restore the correct menu later
+          var originId = Date.now() + Math.random();
+          $menu.data('origin-id', originId);
+          // keep a reference on the dropdown itself so we can easily find the matching menu on hide
+          $dropdown.data('origin-id', originId);
+          $menu.data('origin-parent', $menu.parent());
+          var offset = $dropdown.offset();
+          $menu.appendTo('body').css({
+            position: 'absolute',
+            display: 'block',
+            top: offset.top + $dropdown.outerHeight(),
+            left: offset.left
+          });
+        });
+
+        $(document).on('hide.bs.dropdown', '.button-row .dropdown', function () {
+          var $dropdown = $(this);
+          var originId = $dropdown.data('origin-id');
+          // find the menu that was appended to body and restore it
+          var $menu = $('body').find('.dropdown-menu').filter(function () { return $(this).data('origin-id') === originId; });
+          if ($menu.length && $menu.data('origin-parent')) {
+            // hide and cleanup positioning before restoring into original parent
+            $menu.hide();
+            $menu.css({ position: '', top: '', left: '' });
+            $menu.appendTo($menu.data('origin-parent'));
+            $menu.removeData('origin-id');
+            $menu.removeData('origin-parent');
+            $dropdown.removeData('origin-id');
+          }
+        });
+      })(jQuery);
+    </script>
 
   
 

@@ -8,7 +8,7 @@ input, textarea {
     margin: 0 auto 8px auto;
 }
 
-button {
+.ApplicationSubmit {
     border-radius: 8px;
     background-color: #3dbdb6;
     color: white;

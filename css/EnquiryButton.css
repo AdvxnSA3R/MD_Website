@@ -1,0 +1,12 @@
+.enquire-button {
+    border-radius: 8px;
+    border-color: transparent;
+    background-color: #F42F87;
+    color: white;
+    display: block;
+    
+    margin: 15px 20px;
+    box-shadow: 3px 3px 0px #456AB9;
+    width: 200px;
+    
+}

@@ -1064,7 +1064,7 @@ font-size:inherit;
 line-height:inherit}
 
 a{
-color:#992f59;
+color:#000000;
 text-decoration:none}
 
 a:hover,a:focus{
@@ -2751,12 +2751,12 @@ color:#fff;
 background-color:#333338}
 
 .btn-primary{
-color:#fff;
+color:#000000;
 background-color:#3dbdb6;
 border-color:#3dbdb6}
 
 .btn-primary:focus,.btn-primary.focus{
-color:#fff;
+color:#000000;
 background-color:#3DBDB6;
 border-color:#371120}
 
@@ -2773,7 +2773,7 @@ background-image:none;
 border-color:#6a213e}
 
 .btn-primary:active:hover,.btn-primary.active:hover,.open>.dropdown-toggle.btn-primary:hover,.btn-primary:active:focus,.btn-primary.active:focus,.open>.dropdown-toggle.btn-primary:focus,.btn-primary:active.focus,.btn-primary.active.focus,.open>.dropdown-toggle.btn-primary.focus{
-color:#fff;
+color:#000;
 background-color:#66fcf1;
 border-color:#371120}
 
@@ -4039,10 +4039,12 @@ background-color:transparent}
 border-color:#333}
 
 .navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus{
-background-color:#333}
+background-color:#66fcf1;
+}
 
 .navbar-inverse .navbar-toggle .icon-bar{
-background-color:#fff}
+background-color:#000000;
+}
 
 .navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form{
 border-color:#101010}
@@ -5995,7 +5997,7 @@ font-size:36px;
 margin-bottom:-11px}
 
 .card-group .card .card-body h3{
-color:#992f59}
+color:#000000}
 
 @media screen and (min-width:768px){
 .card-group .card{

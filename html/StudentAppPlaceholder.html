@@ -84,7 +84,9 @@
     <div class="container">
         <div class="file-input">
             <h4>Insert PDF files only</h4>
-            <input class="FileUpload" type="file" accept=".pdf, .doc, .docx" id="pdfInput" />
+            <input  id="cv-upload" type="file" accept=".pdf, .doc, .docx" style="display:none" input/>
+            <label for="cv-upload" class="StudentCVUpload">Choose File</label>
+            <span id="SelectedCV" >Choose a CV file</span>
             <input type="submit" value="Upload">
             <div class="file-info" id="pdfInfo"></div>
         </div>
@@ -157,6 +159,17 @@
           }
         });
       })(jQuery);
+    </script>
+
+    <script>$(document).ready(function(){
+        $('#cv-upload').on('change', function(){
+            const fileName = $(this).val().split('\\').pop() || 'No CV Selected';
+            $('#SelectedCV').text(fileName);
+        });
+    }
+      
+      
+    );
     </script>
 
   

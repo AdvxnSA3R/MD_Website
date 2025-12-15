@@ -1,0 +1,54 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  /* use box-sizing and responsive sizing so width and padding behave predictably */
+  box-sizing: border-box;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0.5rem auto; /* centers the collapsible */
+  border: none;
+  text-align: center; /* center the button text */
+  outline: none;
+  font-size: 15px;
+  border-radius: 8px;
+  /* fixed large width removed in favor of max-width for responsiveness */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #3dbdb6;
+}
+
+/* When active, remove bottom rounding so content can join visually */
+.collapsible.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  box-sizing: border-box;
+  padding: 8px 14px; /* reduced vertical and horizontal padding */
+  width: 100%;
+  max-width: 700px; /* match the button width */
+  margin: 0 auto; /* center the expanded content under the button */
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  text-align: center; /* center the content text */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Center the collapsible (button + content) in the middle of the page */
+.collapsible-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* align to top */
+  box-sizing: border-box;
+  padding: 2.5rem 1rem 1rem; /* push below fixed navbar, small bottom padding */
+}

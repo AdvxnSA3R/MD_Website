@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../assets/favicon.png">
+
+    <title>T Connect - Contact Us</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/enquire.css" rel="stylesheet">
+    <link href="../css/hero-image.css" rel="stylesheet">
+    <link href="../css/EnquiryButton.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html"><img src="../assets/logo.png" class="img-fluid" alt="T-Connect Logo" width="80" height="80"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../html/questions.html">Q&A</a></li>
+            <li class="active"><a href="../html/support.html">Support</a></li>
+            <li class="active"><a href="../html/stories.html">Student Stories</a></li>
+            <li class="active"><a href="../html/about.html">About</a></li>          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmes<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://digitalher.co.uk/" target="_blank">Digital Her</a></li>
+                <li><a href="https://www.manchesterdigital.com/programmes/apprenticeships" target="_blank">Apprenticeships</a></li>
+                <li><a href="https://www.manchesterdigital.com/programmes/grad-recharge" target="_blank">Grad Recharge</a></li>
+              </ul>
+            <li><button class = "enquire-button" onclick="location.href='../html/enquire.html'">Are you an employer?  Contact us</button></li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- Hero section  -->
+      <section class="hero">
+        <span class="black_bg">Got a placement? Contact us below</span>
+        <div class="container">
+          
+
+        </div>
+      </section>
+      
+      <body>
+
+      <!-- Lots of text section  -->
+       <section>
+        <div class="container">
+          <h2>Have you got a placement to offer?</h2>
+            <p>Here you can apply to post your company's T level placement, 
+              this will get checked over by our team and you will hear back from us as soon as possible
+            </p>
+          </br> </br>
+          <p>What is the company name?</p>
+          <input type="text" id="company-name-input"> </br> </br>
+          <p>What is your name?</p>
+          <input type="text" id="applicant-name-input"> </br> </br>
+          <p>What is your role in the company?</p>
+          <input type="text" id="applicant-role-input"> </br> </br>
+          <p>What is this placement about</p>
+          <input type="text" id="placement-information-input"> </br> </br>
+          <p>Your email address?</p>
+          <input type="email" id="email-address"> </br> </br>
+          <button class="ApplicationSubmit" id="application-submit"><a href="mailto:tconnect@manchesterdigital.com">Submit</a></button>
+          <p id="user-age-feedback">Please enter your information above.</p>
+          </section>
+
+      </body>
+
+      <script>
+        const inputElement = document.getElementById("company-name-input", "applicant-name-input", "applicant-role-input" );
+
+        function MinimumCharacterInput(CharacterAmount, MinCharacter) {
+            if (CharacterAmount >= MinCharacter) {
+                inputElement.innerText = "";
+
+            } else {
+                inputElement.innerText = "Please enter atleast 1 character in each box.";
+            }
+        }
+
+        const MinCharacter = 1
+        let CharacterAmount = null;
+
+        document
+            .getElementById("application-submit")
+            .addEventListener("click", function () {
+                CharacterAmount = document.getElementById("company-name-input", "applicant-name-input", "applicant-role-input").value;
+                MinimumCharacterInput(CharacterAmount, MinCharacter);
+
+                const emailAddress = document.getElementById("email-address").value;
+
+
+                console.log(emailAddress.includes("@"));
+
+                alert(
+                    emailAddress.includes("@") === true &&
+                    emailAddress.includes(".com") === true ? 
+                        "Email is valid" : 
+                        "Email is not valid"
+                )
+
+            });
+    </script>
+     
+
+    <footer>
+      <div class="container">
+        <div class="space-between">
+          <p>&copy; 2025 Manchester Digital</p>
+
+          <ul class="list-inline">
+            <li><a href="https://x.com/McrDig" target="_blank"><i class="mdi mdi-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/ManchesterDigital" target="_blank"><i class="mdi mdi-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/manchesterdigital/" target="_blank"><i class="mdi mdi-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/company/manchester-digital/posts/?feedView=all" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+            <li><a href="https://www.manchesterdigital.com/slack-channel" target="_blank"><i class="mdi mdi-forum"></i></a></li>
+
+          </ul>
+
+          <ul class="list-inline">
+            <li><a href="https://digitalher.co.uk/" target="_blank">Digital Her</a></li>
+            <li><a href="https://www.manchesterdigital.com/programmes/apprenticeships" target="_blank">Apprenticeships</a></li>
+            <li><a href="https://www.manchesterdigital.com/programmes/grad-recharge" target="_blank">Grad Recharge</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="../js/bootstrap.js"></script>
+
+  
+
+</body></html>

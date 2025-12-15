@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../assets/favicon.png">
+
+    <title>T connect - Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/hero-image.css" rel="stylesheet">
+    <link href="../css/EnquiryButton.css" rel="stylesheet">
+    <link href="../css/Apply.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html"><img src="../assets/logo.png" class="img-fluid" alt="T-Connect Logo" width="80" height="80"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li ><a href="questions.html">Q&A</a></li>
+            <li ><a href="support.html">Support</a></li>
+            <li ><a href="stories.html">Student Stories</a></li>
+            <li ><a href="about.html">About</a></li>
+            
+            <!-- <li ><a class = "enquire-button" href="html/enquire.html">Are you an employer?  Contact us</a></li> -->
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmes<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://digitalher.co.uk/" target="_blank">Digital Her</a></li>
+                <li><a href="https://www.manchesterdigital.com/programmes/apprenticeships" target="_blank">Apprenticeships</a></li>
+                <li><a href="https://www.manchesterdigital.com/programmes/grad-recharge" target="_blank">Grad Recharge</a></li>
+          
+              </ul>
+            <li><button class = "enquire-button" onclick="location.href='enquire.html'">Are you an employer?  Contact us</button></li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- Hero section  -->
+      <section class="hero">
+        <span class="black_bg">Apply for a placement</span>
+        <div class="container">      
+          
+
+        </div>
+      </section>
+
+    </main>
+
+
+
+    
+    <!-- pdf, docx and doc file upload -->
+    <div class="container">
+        <div class="file-input">
+            <h4>Insert PDF files only</h4>
+            <input  id="cv-upload" type="file" accept=".pdf, .doc, .docx" style="display:none" input/>
+            <label for="cv-upload" class="StudentCVUpload">Choose File</label>
+            <span id="SelectedCV" >Choose a CV file</span>
+            <input type="submit" value="Upload">
+            <div class="file-info" id="pdfInfo"></div>
+        </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="space-between">
+          <p>&copy; 2025 Manchester Digital</p>
+
+          <ul class="list-inline">
+            <li><a href="https://x.com/McrDig" target="_blank"><i class="mdi mdi-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/ManchesterDigital" target="_blank"><i class="mdi mdi-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/manchesterdigital/" target="_blank"><i class="mdi mdi-instagram"></i></a></li> 
+            <li><a href="https://www.linkedin.com/company/manchester-digital/posts/?feedView=all" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+            <li><a href="https://www.manchesterdigital.com/slack-channel" target="_blank"><i class="mdi mdi-forum"></i></a></li>
+            
+
+          </ul>
+
+          <ul class="list-inline">
+            <li><a href="https://digitalher.co.uk/" target="_blank">Digital Her</a></li>
+            <li><a href="https://www.manchesterdigital.com/programmes/apprenticeships" target="_blank">Apprenticeships</a></li>
+            <li><a href="https://www.manchesterdigital.com/programmes/grad-recharge" target="_blank">Grad Recharge</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="../js/bootstrap.js"></script>
+    <script>
+      // Move dropdown menus out to body while open so their visibility isn't restricted by parent overflow or stacking context
+      (function ($) {
+        $(document).on('show.bs.dropdown', '.button-row .dropdown', function () {
+          var $dropdown = $(this);
+          var $menu = $dropdown.find('.dropdown-menu');
+          // store an origin id so we can restore the correct menu later
+          var originId = Date.now() + Math.random();
+          $menu.data('origin-id', originId);
+          // keep a reference on the dropdown itself so we can easily find the matching menu on hide
+          $dropdown.data('origin-id', originId);
+          $menu.data('origin-parent', $menu.parent());
+          var offset = $dropdown.offset();
+          $menu.appendTo('body').css({
+            position: 'absolute',
+            display: 'block',
+            top: offset.top + $dropdown.outerHeight(),
+            left: offset.left
+          });
+        });
+
+        $(document).on('hide.bs.dropdown', '.button-row .dropdown', function () {
+          var $dropdown = $(this);
+          var originId = $dropdown.data('origin-id');
+          // find the menu that was appended to body and restore it
+          var $menu = $('body').find('.dropdown-menu').filter(function () { return $(this).data('origin-id') === originId; });
+          if ($menu.length && $menu.data('origin-parent')) {
+            // hide and cleanup positioning before restoring into original parent
+            $menu.hide();
+            $menu.css({ position: '', top: '', left: '' });
+            $menu.appendTo($menu.data('origin-parent'));
+            $menu.removeData('origin-id');
+            $menu.removeData('origin-parent');
+            $dropdown.removeData('origin-id');
+          }
+        });
+      })(jQuery);
+    </script>
+
+    <script>$(document).ready(function(){
+        $('#cv-upload').on('change', function(){
+            const fileName = $(this).val().split('\\').pop() || 'No CV Selected';
+            $('#SelectedCV').text(fileName);
+        });
+    }
+      
+      
+    );
+    </script>
+
+  
+
+</body></html>

@@ -1,0 +1,127 @@
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-image: url('../assets/hero-image.png');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0);
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 40px 15px;
+}
+
+button{
+    text-align: center;
+
+}
+
+/* Make button rows show buttons horizontally and centered */
+.button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* keep layout horizontal */
+    /* allow horizontal scroll on small screens, while ensuring dropdowns can escape vertical clipping */
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+}
+
+/* Small tweak for mobile: full-width buttons on very small screens */
+@media (max-width: 420px) {
+    /* Keep horizontal layout but let users scroll if needed */
+    .button-row .btn {
+        flex: 0 0 auto; /* don't force full width */
+    }
+}
+
+/* Ensure each child inside the button-row doesn't grow to full width */
+.button-row > * {
+    flex: 0 0 auto;
+}
+
+/* Make any dropdowns in button-row align horizontally with the CTA */
+.button-row .dropdown {
+    display: inline-flex; /* inline so it sits beside the button */
+    align-items: center;
+    list-style: none;
+    position: relative; /* ensure absolute dropdown-menu is positioned correctly */
+    margin: 0; /* rely on gap instead of default margins */
+}
+
+/* Make dropdown menu visible above other elements within the row */
+.button-row .dropdown-menu {
+    z-index: 999999 !important; /* force dropdown menu to sit above everything */
+    min-width: 5rem; /* ensure menu isn't zero width if empty */
+}
+
+/* Make sure ancestor elements don't create stacking context that hides dropdowns */
+main, .container, .card-group, .navbar, footer {
+    overflow: visible;
+}
+
+/* Use bootstrap's btn styles, but ensure inline spacing for anchors inside the row */
+.button-row a.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.75rem; /* slightly smaller than default btn spacing */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff; /* will be overridden by btn-default colors in bootstrap */
+    color: #333;
+    text-decoration: none;
+}
+
+/* Slight adjustment for the CTA to line up with the dropdowns */
+.button-row .btn {
+    margin-left: 0.25rem; /* fallback spacing; `gap` is still used on row root */
+    padding: 0.45rem 0.75rem; /* keep anchor and buttons visually consistent */
+}
+
+/* Cards */
+.card-group .card .card-body h3 {
+    color: #000000;
+}
+
+.card-group .btn-primary {
+    color: #fff;
+    background-color: #6862af;
+    border-color: #272443;
+    font-family: "Poppins", sans-serif;
+    border-radius: 0;
+}
+
+.card-group  .btn:hover {
+    color: #fff;
+    background-color: #37326a;
+    border-color: #272443;
+}
+
+.card-group .btn:focus {
+    background-color: #3a3844;
+}
+  
+.card-group .card {
+    flex: 1;
+    flex-direction: column;
+}
+

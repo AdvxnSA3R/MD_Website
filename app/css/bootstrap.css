@@ -1067,9 +1067,9 @@ a{
 color:#000000;
 text-decoration:none}
 
-a:hover,a:focus{
+/* a:hover,a:focus{
 color:#ffffff;
-text-decoration:underline}
+text-decoration:underline} */
 
 a:focus{
 outline:5px auto -webkit-focus-ring-color;
